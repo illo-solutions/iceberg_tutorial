@@ -1,6 +1,9 @@
+locals {
+    bucket_name = "illo-laz-iceberg-data"
+}
 
 resource "aws_s3_bucket" "data_bucket" {
-    bucket = var.bucket_name
+    bucket = local.bucket_name
 }
 
 resource "aws_glue_catalog_database" "glue_database" {

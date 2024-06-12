@@ -3,7 +3,7 @@
 ## Installing and configuring the tools
 
 Set up first your python environment. This includes all the needed libraries to work with
-We will be using VS Code for this
+We will be using VS Code for this.
 
 Run this on the root of the project (ideally with Python 3.11)
 ```bash
@@ -29,14 +29,14 @@ output = json
 
 For simplicity so you don't have to leave your IDE at any point, we provide a terraform script that can deploy all resources at once.
 
-It only requires you to configure the bucket name as it should be unique. For that, go to the [variables.tf](terraform/variables.tf) file and replace the default value (`illo-laz-iceberg-data` on this case) for a unique name you want to use.
+It only requires you to configure the `bucket_name` as it should be unique. For that, go to the [main.tf](terraform/main.tf) file and replace the default value (`illo-laz-iceberg-data` on this case) for a unique name you want to use.
 
 To deploy everything, simply edit the following commands to match your case and run them on `./terraform` folder.
 
 ```bash
 export AWS_PROFILE=given_profile_name
 terraform init
-terraform deploy
+terraform apply
 ```
 
 ## Do some queries
